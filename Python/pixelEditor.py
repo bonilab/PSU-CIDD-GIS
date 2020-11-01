@@ -21,7 +21,7 @@ def main(filename, x, y, value):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         print "Usage: ./pixelEditor.py [filename] [row] [col] [value]"
         print "Coordinates are assumed to be zero indexed and the file specificed will be "
         print "print updated following execution"
