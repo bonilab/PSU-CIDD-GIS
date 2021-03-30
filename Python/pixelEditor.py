@@ -1,30 +1,30 @@
-#!/usr/bin/python 
+#!/usr/bin/python3
 
 # pixelEditor.py
 #
 # This script takes an ASC filename, x, y, and pixel value as an input. The 
 # file is then opened and the pixel at that location is updated to be the value
 # and saved.
+import sys
 
-from include.ascFile import *
+import include.ascFile as ascFile
 
 
 def main(filename, x, y, value):
     # Load the ASC file
-    [ ascheader, data ] = load_asc(filename)
+    [ascheader, data] = ascFile.load_asc(filename)
 
     # Edit the value
     data[row][col] = value
 
     # Write the ASC file
-    write_asc(ascheader, data, filename)
+    ascFile.write_asc(ascheader, data, filename)
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print "Usage: ./pixelEditor.py [filename] [row] [col] [value]"
-        print "Coordinates are assumed to be zero indexed and the file specificed will be "
-        print "print updated following execution"
+        print("Usage: ./pixelEditor.py [filename] [row] [col] [value]")
+        print("Coordinates are assumed to be zero indexed and the file specificed will be updated following execution")
         exit(0)
 
     # Parse the parameters
