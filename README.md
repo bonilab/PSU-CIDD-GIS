@@ -10,6 +10,8 @@ Presently this repository is organized by the programming language (e.g., Python
 
 ## Included Tools
 
+`evalraster` - Use Python's evaluate command to perform basic mathematical operations on the supplied raster file.
+
 `extractdistrct` - This script allows for one or more ASC rasters to have one or more districts extracted from them. 
 
 `pixeleditor` - This script allows for a single pixel value to be edited.

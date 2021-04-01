@@ -4,9 +4,12 @@
 import sys
 
 
-# Compare the two header files, return True if they are the same, False otherwise. 
-# If printError is set, then errors will be printed to stderr
 def compare_header(one, two, printError = True):
+    '''
+    Compare the two header files, return True if they are the same, False otherwise. 
+    If printError is set, then errors will be printed to stderr
+    '''
+
     result = True
     if one['ncols'] != two['ncols']:
         if printError: sys.stderr.write('{} != {} ncols\n'.format(one['ncols'], two['ncols']))
@@ -29,11 +32,13 @@ def compare_header(one, two, printError = True):
     return result
 
 
-# Compare the two data sections, return True if they are the same, False otherwise. 
-# If printError is set, then errors will be printed to stderr
 def compare_data(one, two, nodata, printError = True):
-    result = True
+    '''
+    Compare the two data sections, return True if they are the same, False otherwise. 
+    If printError is set, then errors will be printed to stderr
+    '''
 
+    result = True
     for row in range(0, len(one)):
         for col in range(0, len(one[row])):
             # Set the values
@@ -46,13 +51,12 @@ def compare_data(one, two, nodata, printError = True):
                 if printError: 
                     sys.stderr.write('Mismatched nodata at {}, {}\n'.format(row, col))
                     sys.stderr.write('One: {}, Two {}\n'.format(a, b))
-
-
     return result
 
 
-# Read the ASC file and return the header / data
 def load_asc(filename):
+    '''Read the ASC file and return the header / data'''
+
     with open(filename) as ascfile:    
         lines = ascfile.readlines()
 
@@ -74,8 +78,9 @@ def load_asc(filename):
         return [ ascheader, ascdata ]
 
 
-# Write an ASC file using the data provided
 def write_asc(ascheader, ascdata, filename):
+    '''Write an ASC file using the data provided'''
+
     with open(filename, 'w') as ascfile:
 
         # Write the header values
