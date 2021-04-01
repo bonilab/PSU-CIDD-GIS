@@ -1,2 +1,5 @@
+# Ignore IDE files
+.vscode
+
 # Ignore compiled Python files
 *.pyc
