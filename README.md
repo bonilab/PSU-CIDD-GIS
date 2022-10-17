@@ -1,6 +1,6 @@
 ## PSU-CIDD-GIS
 
-This repository contains scripts used for geographic information systems (GIS) processes used for studies by the Boni Lab at Penn State. 
+This **archived** repository contains scripts used for geographic information systems (GIS) processes used for studies by the Boni Lab at Penn State. Most of the tools have been migrated to [PSU-CIDD-MaSim-Support](https://github.com/bonilab/PSU-CIDD-MaSim-Support).
 
 ### Organization
 
